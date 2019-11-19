@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Todo from './Todo';
+import CtxTodo from './CtxTodo';
 
 const Todos = () => {
+
+  const [todos, setTodos] = useContext(CtxTodo);
+
   return(
     <div>
-      <Todo/>
-      <Todo/>
-      <Todo/>
+      {todos.map((todo, index) => {
+        return <Todo title={todo.title} description={todo.description} index={index} />
+      })}
     </div>
   )
 }
