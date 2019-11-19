@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FormTodo = () => {
+
+  const [form, setForm] = useState({
+    title: '',
+    description: '',
+  });
+
+  const addTodo = () => {
+    console.log(form);
+  }
+
   return(
     <div className="card mb-3">
       <div className="card-body">
-        <div class="form-group">
-          <label for="Title">Title</label>
-          <input type="text" class="form-control" id="Title" placeholder="Title"/>
+        <div className="form-group">
+          <label htmlFor="Title">Title</label>
+          <input type="text"
+          className="form-control" 
+          id="Title"
+          onChange={(e) => setForm({...form, title: e.target.value})}
+          value={form.title}/>
         </div>
-        <div class="form-group">
-          <label for="Description">Description</label>
-          <input type="text" class="form-control" id="Description" placeholder="Description"/>
+        <div className="form-group">
+          <label htmlFor="Description">Description</label>
+          <input type="text" 
+          className="form-control" 
+          id="Description" 
+          onChange={(e) => setForm({...form, description: e.target.value})}
+          value={form.description}/>
         </div>
-        <button className="btn btn-primary">Add</button>
+        <button className="btn btn-primary" onClick={addTodo}>Add</button>
       </div>
     </div>
   )
