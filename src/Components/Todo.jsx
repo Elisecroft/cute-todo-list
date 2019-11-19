@@ -6,6 +6,12 @@ const Todo = (props) => {
 
   const [todos, setTodos] = useContext(CtxTodo);
 
+  const alertDelete = () => {
+    if (window.confirm('Are you sure to delete this todo ?')) {
+      todoDelete();
+    }
+  }
+
   const todoDelete = () => {
     let newTodos = [...todos];
     newTodos.splice(props.index, 1);
@@ -18,7 +24,7 @@ const Todo = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text">{props.description}</p>
-        <button className="btn btn-danger mr-4" onClick={todoDelete}>Delete</button>
+        <button className="btn btn-danger mr-4" onClick={alertDelete}>Delete</button>
         <Link to={`/todo/${props.index}`}to={{ pathname: `/todo/${props.index}`, state: { title: props.title, description: props.description, index: props.index}}}>
           <button className="btn btn-warning">Modify</button>
         </Link>
