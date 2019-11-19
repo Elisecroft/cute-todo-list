@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CtxTodo from './CtxTodo';
 
-const Todo = () => {
+const Todo = (props) => {
+
+  const [todos, setTodos] = useContext(CtxTodo);
+
+  const todoDelete = () => {
+    let newTodos = [...todos];
+    newTodos.splice(props.index, 1);
+    setTodos(newTodos);
+  }
+
   return(
     <div className="card mb-3">
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button className="btn btn-danger">Delete</button>
+        <h5 className="card-title">{props.title}</h5>
+        <p className="card-text">{props.description}</p>
+        <button className="btn btn-danger" onClick={todoDelete}>Delete</button>
       </div>
     </div>
   )

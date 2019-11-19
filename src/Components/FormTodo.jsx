@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import CtxTodo from './CtxTodo';
 
 const FormTodo = () => {
+
+  const [todos, setTodos] = useContext(CtxTodo);
 
   const [form, setForm] = useState({
     title: '',
@@ -8,7 +11,11 @@ const FormTodo = () => {
   });
 
   const addTodo = () => {
-    console.log(form);
+    setTodos([...todos, form]);
+    setForm({
+      title: '',
+      description: '',
+    });
   }
 
   return(
