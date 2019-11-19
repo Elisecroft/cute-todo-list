@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import FormTodo from './Components/FormTodo';
 import CtxTodo from './Components/CtxTodo';
 import Todos from './Components/Todos';
+import Modify from './Components/Modify';
 import Header from './Components/Header';
 
 function App() {
@@ -30,8 +32,11 @@ function App() {
       <Header/>
       <div className="container p-2">
         <CtxTodo.Provider value={[todos, setTodos]}>
-          <FormTodo/>
-          <Todos/>
+          <Switch>
+            <Route exact path='/' component={Todos}/>
+            <Route path='/create' component={FormTodo}/>
+            <Route path='/todo/:id' component={Modify}/>
+          </Switch>
         </CtxTodo.Provider>
       </div>
     </div>
