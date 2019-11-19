@@ -1,18 +1,23 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CtxTodo from './CtxTodo';
 
 const Modify = (props) => {
 
+  const {title} = props.location.state;
+  const {description} = props.location.state;
+  const {index} = props.location.state;
+
   const [todos, setTodos] = useContext(CtxTodo);
 
   const [form, setForm] = useState({
-    title: props.title,
-    description: props.description,
+    title: {title}.title,
+    description: {description}.description,
   });
 
   const todoMofify = () => {
     let newTodos = [...todos];
-    newTodos[props.index] = form;
+    newTodos[{index}.index] = form;
     setTodos(newTodos);
     localStorage.setItem('CuteTodos', JSON.stringify(newTodos));
   }
@@ -36,7 +41,7 @@ const Modify = (props) => {
           onChange={(e) => setForm({...form, description: e.target.value})}
           value={form.description}/>
         </div>
-        <button className="btn btn-warning" onClick={todoMofify}>Apply</button>
+        <Link exact to='/'><button className="btn btn-warning" onClick={todoMofify}>Apply</button></Link>
       </div>
     </div>
   )
