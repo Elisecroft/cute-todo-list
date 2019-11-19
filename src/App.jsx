@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import FormTodo from './Components/FormTodo';
 import CtxTodo from './Components/CtxTodo';
@@ -7,14 +7,24 @@ import Header from './Components/Header';
 
 function App() {
 
-  const [todos, setTodos] = useState([{
-    title: 'First Example',
-    description: 'Its just an example',
-  }, {
-    title: 'Second Example',
-    description: 'An other example',
-  }]);
+  const [todos, setTodos] = useState([]);
 
+  useEffect(() => {
+    const addOriginal = () => {
+      let original = [{title: 'Example of todo', description: 'It\'s just an example todo, do it what you want !'}];
+      if (localStorage.hasOwnProperty('CuteTodos')) {
+        if (localStorage.getItem('CuteTodos').length > 0) {
+          original = JSON.parse(localStorage.getItem('CuteTodos'));
+        }
+      } else {
+        localStorage.setItem('CuteTodos', JSON.stringify(original));
+      }
+      setTodos(original);
+    };
+
+    addOriginal();
+  }, []);
+  
   return (
     <div className="App">
       <Header/>

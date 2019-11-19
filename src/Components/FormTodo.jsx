@@ -11,7 +11,9 @@ const FormTodo = () => {
   });
 
   const addTodo = () => {
-    setTodos([...todos, form]);
+    let newTodos = [...todos, form];
+    setTodos(newTodos);
+    localStorage.setItem('CuteTodos', JSON.stringify(newTodos));
     setForm({
       title: '',
       description: '',

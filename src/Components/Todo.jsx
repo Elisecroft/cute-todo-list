@@ -9,6 +9,7 @@ const Todo = (props) => {
     let newTodos = [...todos];
     newTodos.splice(props.index, 1);
     setTodos(newTodos);
+    localStorage.setItem('CuteTodos', JSON.stringify(newTodos));
   }
 
   return(
