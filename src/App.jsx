@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import FormTodo from './Components/FormTodo';
 import CtxTodo from './Components/CtxTodo';
@@ -30,6 +30,8 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <Link to='/'><button className="btn btn-primary m-4 ml-5">All todos</button></Link>
+      <Link to='/create'><button className="btn btn-info m-4">Add new todo</button></Link>
       <div className="container p-2">
         <CtxTodo.Provider value={[todos, setTodos]}>
           <Switch>

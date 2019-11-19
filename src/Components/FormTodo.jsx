@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import CtxTodo from './CtxTodo';
 
 const FormTodo = () => {
@@ -39,7 +40,9 @@ const FormTodo = () => {
           onChange={(e) => setForm({...form, description: e.target.value})}
           value={form.description}/>
         </div>
-        <button className="btn btn-primary" onClick={addTodo}>Add</button>
+        <Link to='/'>
+          <button className="btn btn-primary" onClick={addTodo}>Add</button>
+        </Link>
       </div>
     </div>
   )
