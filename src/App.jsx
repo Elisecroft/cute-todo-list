@@ -30,8 +30,8 @@ function App() {
       <Header/>
       <div className="container p-2">
         <CtxTodo.Provider value={[todos, setTodos]}>
-          <Todos/>
           <FormTodo/>
+          <Todos/>
         </CtxTodo.Provider>
       </div>
     </div>

@@ -4,7 +4,7 @@ import CtxTodo from './CtxTodo';
 
 const Todos = () => {
 
-  const [todos, setTodos] = useContext(CtxTodo);
+  const [todos] = useContext(CtxTodo);
 
   return(
     <div>
