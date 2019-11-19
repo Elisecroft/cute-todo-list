@@ -3,6 +3,7 @@ import './App.css';
 import FormTodo from './Components/FormTodo';
 import CtxTodo from './Components/CtxTodo';
 import Todos from './Components/Todos';
+import Header from './Components/Header';
 
 function App() {
 
@@ -15,11 +16,14 @@ function App() {
   }]);
 
   return (
-    <div className="App container p-2">
-      <CtxTodo.Provider value={[todos, setTodos]}>
-        <Todos/>
-        <FormTodo/>
-      </CtxTodo.Provider>
+    <div className="App">
+      <Header/>
+      <div className="container p-2">
+        <CtxTodo.Provider value={[todos, setTodos]}>
+          <Todos/>
+          <FormTodo/>
+        </CtxTodo.Provider>
+      </div>
     </div>
   );
 }
