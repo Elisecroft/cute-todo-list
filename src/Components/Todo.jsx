@@ -25,7 +25,7 @@ const Todo = (props) => {
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text">{props.description}</p>
         <button className="btn btn-danger mr-4" onClick={alertDelete}>Delete</button>
-        <Link to={`/todo/${props.index}`}to={{ pathname: `/todo/${props.index}`, state: { title: props.title, description: props.description, index: props.index}}}>
+        <Link to={{ pathname: `/todo/${props.index}`, state: { title: props.title, description: props.description, index: props.index}}}>
           <button className="btn btn-warning">Modify</button>
         </Link>
       </div>

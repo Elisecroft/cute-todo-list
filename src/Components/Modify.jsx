@@ -41,7 +41,7 @@ const Modify = (props) => {
           onChange={(e) => setForm({...form, description: e.target.value})}
           value={form.description}/>
         </div>
-        <Link exact to='/'><button className="btn btn-warning" onClick={todoMofify}>Apply</button></Link>
+        <Link to='/'><button className="btn btn-warning" onClick={todoMofify}>Apply</button></Link>
       </div>
     </div>
   )
