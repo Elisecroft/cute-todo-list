@@ -68,7 +68,7 @@ const Modify = (props) => {
             <option>super</option>
           </select>
         </div>
-        <Link to='/'><button className="btn btn-warning" onClick={todoMofify}>Apply</button></Link>
+        <Link to='/'><button className="btn btn-secondary" onClick={todoMofify}>Apply</button></Link>
       </div>
     </div>
   )
