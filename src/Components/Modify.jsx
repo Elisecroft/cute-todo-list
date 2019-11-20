@@ -6,6 +6,7 @@ const Modify = (props) => {
 
   const {title} = props.location.state;
   const {description} = props.location.state;
+  const {kitten} = props.location.state;
   const {index} = props.location.state;
 
   const [todos, setTodos] = useContext(CtxTodo);
@@ -13,6 +14,7 @@ const Modify = (props) => {
   const [form, setForm] = useState({
     title: {title}.title,
     description: {description}.description,
+    kitten: {kitten}.kitten,
   });
 
   const todoMofify = () => {
@@ -40,6 +42,31 @@ const Modify = (props) => {
           id="Description" 
           onChange={(e) => setForm({...form, description: e.target.value})}
           value={form.description}/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="kitten">Choose a kitten icon</label>
+          <select className="form-control" id="kitten" onChange={(e) => setForm({...form, kitten: e.target.value})}>
+            <option>angel</option>
+            <option>book</option>
+            <option>bubble</option>
+            <option>coffee</option>
+            <option>cook</option>
+            <option>doctor</option>
+            <option>evil</option>
+            <option>fish</option>
+            <option>flower</option>
+            <option>ice</option>
+            <option>love</option>
+            <option>music</option>
+            <option>party</option>
+            <option>pc</option>
+            <option>pencil</option>
+            <option>pirate</option>
+            <option>scared</option>
+            <option>sleep</option>
+            <option>space</option>
+            <option>super</option>
+          </select>
         </div>
         <Link to='/'><button className="btn btn-warning" onClick={todoMofify}>Apply</button></Link>
       </div>

@@ -1,0 +1,16 @@
+.todo {
+  -webkit-box-shadow: 10px 10px 25px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 25px -13px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 25px -13px rgba(0,0,0,0.75);
+}
+
+.todo img {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  filter: drop-shadow(8px 5px 6px rgba(0,0,0,0.5));
+}
+
+.card-title {
+  font-family: 'Courgette', cursive !important;
+}
