@@ -13,8 +13,14 @@
 .btn-primary {
   background-color: #C84618 !important;
   border-color: #C84618 !important;
+  font-size: 20px !important;
 }
 
-.btn-primary:focus {
+.btn-secondary {
+  background-color: #E98A2A !important;
+  border-color: #E98A2A !important;
+}
+
+.btn-primary:focus, .btn-secondary:focus {
   box-shadow: none !important;
 }

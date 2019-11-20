@@ -9,7 +9,7 @@ const FormTodo = () => {
   const [form, setForm] = useState({
     title: '',
     description: '',
-    kitten: '',
+    kitty: 'angel',
   });
 
   const addTodo = () => {
@@ -19,7 +19,7 @@ const FormTodo = () => {
     setForm({
       title: '',
       description: '',
-      kitten: '',
+      kitty: 'angel',
     });
   }
 
@@ -43,8 +43,8 @@ const FormTodo = () => {
           value={form.description}/>
         </div>
         <div className="form-group">
-          <label htmlFor="kitten">Choose a kitten icon</label>
-          <select className="form-control" id="kitten" onChange={(e) => setForm({...form, kitten: e.target.value})}>
+          <label htmlFor="kitty">Choose a kitty icon</label>
+          <select className="form-control" id="kitty" onChange={(e) => setForm({...form, kitty: e.target.value})}>
             <option>angel</option>
             <option>book</option>
             <option>bubble</option>

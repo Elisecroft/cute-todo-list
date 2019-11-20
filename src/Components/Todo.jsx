@@ -23,12 +23,12 @@ const Todo = (props) => {
   return(
     <div className="card mb-5 todo">
       <div className="card-body">
-        <img src={`${process.env.PUBLIC_URL}/assets/images/kitty-${props.kitten}.png`} alt={props.kitten}/>
+        <img src={`${process.env.PUBLIC_URL}/assets/images/kitty-${props.kitty}.png`} alt={props.kitty}/>
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text">{props.description}</p>
         <button className="btn btn-danger mr-4" onClick={alertDelete}>Delete</button>
-        <Link to={{ pathname: `/todo/${props.index}`, state: { title: props.title, description: props.description, kitten: props.kitten, index: props.index}}}>
-          <button className="btn btn-warning">Modify</button>
+        <Link to={{ pathname: `/todo/${props.index}`, state: { title: props.title, description: props.description, kitty: props.kitty, index: props.index}}}>
+          <button className="btn btn-secondary">Modify</button>
         </Link>
       </div>
     </div>

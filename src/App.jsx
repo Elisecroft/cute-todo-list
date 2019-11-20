@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const addOriginal = () => {
-      let original = [{title: 'Example of todo', description: 'It\'s just an example todo, do it what you want !', kitten: 'love'}];
+      let original = [{title: 'Example of todo', description: 'It\'s just an example todo, do it what you want !', kitty: 'love'}];
       if (localStorage.hasOwnProperty('CuteTodos')) {
         if (localStorage.getItem('CuteTodos').length > 0) {
           original = JSON.parse(localStorage.getItem('CuteTodos'));
@@ -31,8 +31,8 @@ function App() {
     <div className="App">
       <Header/>
       <div className="container p-2">
-        <Link to='/'><button className="btn btn-primary m-4">All todos</button></Link>
-        <Link to='/create'><button className="btn btn-primary m-4">Add new todo</button></Link>
+        <Link to='/'><button className="btn btn-primary m-5">All todos</button></Link>
+        <Link to='/create'><button className="btn btn-primary m-5">Add new todo</button></Link>
         <CtxTodo.Provider value={[todos, setTodos]}>
           <Switch>
             <Route exact path='/' component={Todos}/>

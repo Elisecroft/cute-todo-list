@@ -9,7 +9,7 @@ const Todos = () => {
   return(
     <div>
       {todos.map((todo, index) => {
-        return <Todo key={index} title={todo.title} description={todo.description} kitten={todo.kitten} index={index} />
+        return <Todo key={index} title={todo.title} description={todo.description} kitty={todo.kitty} index={index} />
       })}
     </div>
   )
