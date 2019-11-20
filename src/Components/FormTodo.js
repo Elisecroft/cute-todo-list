@@ -4,6 +4,8 @@ import CtxTodo from './CtxTodo';
 
 const FormTodo = () => {
 
+  const kitten = ['angel', 'book', 'bubble', 'coffee', 'cook', 'doctor', 'evil', 'fish', 'flower', 'ice', 'love', 'music', 'party', 'pc', 'pencil', 'pirate', 'scared', 'sleep', 'space', 'super'];
+
   const [todos, setTodos] = useContext(CtxTodo);
 
   const [form, setForm] = useState({
@@ -45,26 +47,9 @@ const FormTodo = () => {
         <div className="form-group">
           <label htmlFor="kitty">Choose a kitty icon</label>
           <select className="form-control" id="kitty" onChange={(e) => setForm({...form, kitty: e.target.value})}>
-            <option>angel</option>
-            <option>book</option>
-            <option>bubble</option>
-            <option>coffee</option>
-            <option>cook</option>
-            <option>doctor</option>
-            <option>evil</option>
-            <option>fish</option>
-            <option>flower</option>
-            <option>ice</option>
-            <option>love</option>
-            <option>music</option>
-            <option>party</option>
-            <option>pc</option>
-            <option>pencil</option>
-            <option>pirate</option>
-            <option>scared</option>
-            <option>sleep</option>
-            <option>space</option>
-            <option>super</option>
+            {kitten.map(kitty => {
+              return <option>{kitty}</option>
+            })};
           </select>
         </div>
         <Link to='/'>
